@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import LocaleSwitcher from '@/components/LocaleSwitcher'
 
-export default function IndexPage() {
+export default function HomeView() {
 	const router = useRouter()
 	const { locale, locales, defaultLocale } = router
 
