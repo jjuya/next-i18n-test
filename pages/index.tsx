@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeView from '@/views/HomeView'
+import { HomeView } from '@/views'
 
 export default function Home() {
 	return <HomeView />
