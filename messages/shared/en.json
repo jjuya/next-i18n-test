@@ -7,8 +7,8 @@
 		"title": "Footer Title",
 		"subTitle": "Footer Subtitle"
 	},
-	"LocationSwitch": {
-		"langSwitches": [
+	"LocaleSwitcher": {
+		"localeSwitches": [
 			{ "label": "English", "value": "en" },
 			{ "label": "Korean", "value": "ko" }
 		]
