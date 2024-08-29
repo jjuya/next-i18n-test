@@ -1,5 +1,16 @@
 {
-  "Header": "",
-  "Footer": "",
-  "LocationSwitch": ""
+	"Header": {
+		"title": "헤더 타이틀",
+		"subTitle": "헤더 서브타이틀"
+	},
+	"Footer": {
+		"title": "푸터 타이틀",
+		"subTitle": "푸터 서브타이틀"
+	},
+	"LocationSwitch": {
+		"langSwitches": [
+			{ "label": "영어", "value": "en" },
+			{ "label": "한국어", "value": "ko" }
+		]
+	}
 }

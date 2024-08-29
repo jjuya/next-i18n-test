@@ -1,5 +1,16 @@
 {
-  "Header": "",
-  "Footer": "",
-  "LocationSwitch": ""
+	"Header": {
+		"title": "Header Title",
+		"subTitle": "Header Subtitle"
+	},
+	"Footer": {
+		"title": "Footer Title",
+		"subTitle": "Footer Subtitle"
+	},
+	"LocationSwitch": {
+		"langSwitches": [
+			{ "label": "English", "value": "en" },
+			{ "label": "Korean", "value": "ko" }
+		]
+	}
 }
