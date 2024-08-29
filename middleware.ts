@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 const PUBLIC_FILE = /\.(.*)$/
 
 export async function middleware(req: NextRequest) {
-	const supportedLocales = ['en', 'ko', 'vi']
-	const defaultLocale = 'vi'
+	const supportedLocales = ['en', 'ko']
+	const defaultLocale = 'ko'
 
 	if (
 		!req.nextUrl.pathname.startsWith('/_next') &&
