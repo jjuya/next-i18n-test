@@ -3,21 +3,19 @@ import { NextRequest, NextResponse } from 'next/server'
 const PUBLIC_FILE = /\.(.*)$/
 
 export async function middleware(req: NextRequest) {
-	const supportedLocales = ['en', 'ko', 'vi']
-	const defaultLocale = 'vi'
-
 	if (
-		!req.nextUrl.pathname.startsWith('/_next') &&
-		!req.nextUrl.pathname.includes('/api/') &&
-		!PUBLIC_FILE.test(req.nextUrl.pathname)
+		req.nextUrl.pathname.startsWith('/_next') ||
+		req.nextUrl.pathname.includes('/api/') ||
+		PUBLIC_FILE.test(req.nextUrl.pathname)
 	) {
-		const locale = supportedLocales.find((loc) => req.nextUrl.pathname.startsWith(`/${loc}`))
+		return
+	}
 
-		if (!locale) {
-			req.nextUrl.pathname = `/${defaultLocale}${req.nextUrl.pathname}`;
-			return NextResponse.redirect(req.nextUrl);
-		}
+	if (req.nextUrl.locale === 'default') {
+		const locale = req.cookies.get('NEXT_LOCALE')?.value || 'en'
 
-		return NextResponse.next()
+		return NextResponse.redirect(
+			new URL(`/${locale}${req.nextUrl.pathname}${req.nextUrl.search}`, req.url)
+		)
 	}
 }
